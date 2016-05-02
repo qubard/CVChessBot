@@ -21,7 +21,7 @@ public class Player {
 			if(boardReader.buildFEN() && boardReader.isFENBuilt()) Stockfish.run(boardReader.getFEN());
 			if(!boardReader.toString().equals(last) && Stockfish.getBestMove() != "" && boardReader.isFENBuilt()) {
 				last = boardReader.toString();
-				if(boardReader.isMyTurn()) { 
+				if(boardReader.isMyTurn() && boardReader.fenMatchesSide()) { 
 					MouseBot.get().Move(Stockfish.getBestMove());
 				}
 			}
