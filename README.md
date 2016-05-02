@@ -3,7 +3,7 @@ A Chess.com bot.
 
 # Installation
 
-Download [stockfish](https://stockfishchess.org/) and put it in the project's root directory.
+Download [stockfish](https://stockfishchess.org/) and put it in the project's root directory (check out the config.java file and make sure the executable names match as well).
 
 Make sure you're using Chess.com's "old" interface and on the simple board in Live Chess.
 
