@@ -152,7 +152,6 @@ public class BoardReader {
 			}
 		}
 		else if(fenStack.size() == 0) { 
-			System.out.println("CLEARED");
 			fenStack.push(FEN); 
 			Stockfish.run("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1");
 		}
