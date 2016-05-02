@@ -193,9 +193,7 @@ public class BoardReader {
 	}
 	
 	public boolean fenMatchesSide() {
-		String[] chunks = FEN.split(" ");
-		if(chunks.length < 1) return false;
-		return chunks[1].equals(isWhite() ? "w" : "b");
+		return getTurn() == (isWhite() ? 'w' : 'b')
 	}
 	private boolean hasMoved() {
 		return fenStack.size() > 1 ? !fenStack.get(fenStack.size()-1).equals(fenStack.get(fenStack.size()-2)) : false;
