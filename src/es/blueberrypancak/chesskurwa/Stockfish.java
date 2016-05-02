@@ -25,8 +25,8 @@ public class Stockfish {
 	               	String s = scan.nextLine();
 	               	System.out.println(s);
 	               	if(s.contains("bestmove")) { 
-	            	   	bestMove = s.split(" ")[1]; 
-	             }
+	            	   bestMove = s.split(" ")[1]; 
+	             	}
 	            }
 	            while(exe.isAlive()) { try { exe.getInputStream().close(); } catch (IOException e) { e.printStackTrace(); } exe.destroy(); }
 	         }
