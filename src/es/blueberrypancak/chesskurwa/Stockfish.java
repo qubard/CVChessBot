@@ -9,7 +9,7 @@ public class Stockfish {
 	
 	private static String bestMove;
 	
-	public static void run(String FEN) throws IOException{ // wtf is going on here
+	public static void run(String FEN) throws IOException{ 
 		bestMove = "";
 		FEN = "position fen " + FEN + "\ngo movetime " + Config.moveTime + "\n";
 		Process exe = Runtime.getRuntime().exec(Config.stockfish);
