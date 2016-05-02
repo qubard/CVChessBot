@@ -80,22 +80,22 @@ public class BoardReader {
 	
 	private Dimension refresh() {
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        img = robot.createScreenCapture(new Rectangle(0, 0, screenSize.width, screenSize.height));
-        return screenSize;
+        	img = robot.createScreenCapture(new Rectangle(0, 0, screenSize.width, screenSize.height));
+        	return screenSize;
 	}
 	
 	private void findBoard() {
 		Dimension d = refresh();
-        for(int x = 0; x < d.width; x++) {
-        	for(int y = 0; y < d.height; y++) {
-        		if(match(x,y,Config.LIGHT_GRAY) && match(x+1,y,Config.LIGHT_GRAY) 
+        	for(int x = 0; x < d.width; x++) {
+        		for(int y = 0; y < d.height; y++) {
+        			if(match(x,y,Config.LIGHT_GRAY) && match(x+1,y,Config.LIGHT_GRAY) 
         				&& match(x,y+1,Config.LIGHT_GRAY) && match(x+1,y+1,Config.DARK_GRAY)) {
-        			boardX = x+2;
-        			boardY = y+2;
-        			return;
+        				boardX = x+2;
+        				boardY = y+2;
+        				return;
+        			}
         		}
-        	}
-        }
+		}
 	}
 	
 	private boolean tileEmpty(int x, int y) {
@@ -215,11 +215,7 @@ public class BoardReader {
 					r = (char)(97+i)+"6";
 			}
 			fenStack.push(currentFEN);
-			if(r != "") {
-				enPassant = r;
-			} else {
-				enPassant = "-";
-			}
+			enPassant = r != "" ? r : "-";
 		}
 	}
 
