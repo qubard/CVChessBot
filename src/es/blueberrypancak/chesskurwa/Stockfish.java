@@ -27,7 +27,7 @@ public class Stockfish {
 	            	   bestMove = s.split(" ")[1]; 
 	             	}
 	            }
-	            while(exe.isAlive()) { try { exe.getInputStream().close(); } catch (IOException e) { e.printStackTrace(); } exe.destroy(); }
+	            while(exe.isAlive()) { try { scan.close(); exe.getInputStream().close(); } catch (IOException e) { e.printStackTrace(); } exe.destroy(); }
 	         }
 	      }).start();
 	}
