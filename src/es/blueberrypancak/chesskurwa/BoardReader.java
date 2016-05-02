@@ -63,8 +63,12 @@ public class BoardReader {
 		return this.FEN;
 	}
 	
+	private boolean isFENBuilt(String s ) {
+		return s.split(" ").length > 1;
+	}
+	
 	public boolean isFENBuilt() {
-		return this.FEN.split(" ").length > 1;
+		return isFENBuilt(FEN);
 	}
 	
 	public boolean isMyTurn() {
@@ -151,9 +155,11 @@ public class BoardReader {
 				fenStack.push(FEN);
 			}
 		}
-		else if(fenStack.size() == 0) { 
-			fenStack.push(FEN); 
-			Stockfish.run("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1");
+		else if(fenStack.size() == 0) {
+			if(isFENBuilt(tempFEN)) { 
+				fenStack.push(tempFEN); 
+				Stockfish.run(tempFEN);
+			}
 		}
 		
 		if(hasMoved()) {
@@ -195,6 +201,7 @@ public class BoardReader {
 	public boolean fenMatchesSide() {
 		return getTurn() == (isWhite() ? 'w' : 'b');
 	}
+	
 	private boolean hasMoved() {
 		return fenStack.size() > 1 ? !fenStack.get(fenStack.size()-1).equals(fenStack.get(fenStack.size()-2)) : false;
 	}
