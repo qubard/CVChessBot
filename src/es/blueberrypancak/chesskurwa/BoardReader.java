@@ -193,7 +193,7 @@ public class BoardReader {
 	}
 	
 	public boolean fenMatchesSide() {
-		return getTurn() == (isWhite() ? 'w' : 'b')
+		return getTurn() == (isWhite() ? 'w' : 'b');
 	}
 	private boolean hasMoved() {
 		return fenStack.size() > 1 ? !fenStack.get(fenStack.size()-1).equals(fenStack.get(fenStack.size()-2)) : false;
