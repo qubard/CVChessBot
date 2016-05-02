@@ -226,8 +226,11 @@ public class BoardReader {
 	}
 
 	public boolean isWhite() {
-		return match(boardX+7,boardY+487,Config.S1) && match(boardX+8,boardY+487,Config.S2) && match(boardX+9,boardY+487,Config.S3)
-				|| match(boardX+8,boardY+487,Config.S1) && match(boardX+9,boardY+487,Config.S2) && match(boardX+10,boardY+487,Config.S3);
+		int x = boardX+7; int y = boardY+487;
+		return match(x,y,Config.S1) && match(x+1,y,Config.S2) && match(x+2,y,Config.S3)
+				|| match(x+1,y,Config.S1) && match(x+2,y,Config.S2) && match(x+3,y,Config.S3)
+				|| match(x,y,Config.Y1) && match(x+1,y,Config.Y2) && match(x+2,y,Config.Y3)
+				|| match(x+1,y,Config.Y1) && match(x+2,y,Config.Y2) && match(x+3,y,Config.Y3);
 	}
 	
 	private static boolean match(int x, int y, Color c) {
