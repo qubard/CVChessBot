@@ -12,7 +12,6 @@ public class Stockfish {
 	public static void run(String FEN) throws IOException{ // wtf is going on here
 		bestMove = "";
 		FEN = "position fen " + FEN + "\ngo movetime " + Config.moveTime + "\n";
-		System.out.println(FEN.length()+" -> "+FEN);
 		Process exe = Runtime.getRuntime().exec(Config.stockfish);
 		OutputStream stdin = exe.getOutputStream();
 		stdin.write(FEN.getBytes());
