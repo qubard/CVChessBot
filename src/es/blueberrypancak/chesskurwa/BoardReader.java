@@ -193,6 +193,11 @@ public class BoardReader {
 		return b;
 	}
 	
+	public boolean fenMatchesSide() {
+		String[] chunks = FEN.split(" ");
+		if(chunks.length < 1) return false;
+		return chunks[1].equals(isWhite() ? "w" : "b");
+	}
 	private boolean hasMoved() {
 		return fenStack.size() > 1 ? !fenStack.get(fenStack.size()-1).equals(fenStack.get(fenStack.size()-2)) : false;
 	}
@@ -224,7 +229,8 @@ public class BoardReader {
 	}
 
 	public boolean isWhite() {
-		return match(boardX+7,boardY+487,Config.S1) && match(boardX+8,boardY+487,Config.S2) && match(boardX+9,boardY+487,Config.S3);
+		return match(boardX+7,boardY+487,Config.S1) && match(boardX+8,boardY+487,Config.S2) && match(boardX+9,boardY+487,Config.S3)
+				|| match(boardX+8,boardY+487,Config.S1) && match(boardX+9,boardY+487,Config.S2) && match(boardX+10,boardY+487,Config.S3);
 	}
 	
 	private static boolean match(int x, int y, Color c) {
