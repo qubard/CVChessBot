@@ -7,13 +7,12 @@ import java.util.Scanner;
 
 public class Stockfish {
 	
-	private static String bestMove;
+	private static String bestMove, lastFEN;
 	private static char currentSide;
 	
 	public static void run(String FEN) throws IOException{ 
 		bestMove = "";
-		currentSide = FEN.split(" ")[1].charAt(0);
-		FEN = "position fen " + FEN + "\ngo movetime " + Config.moveTime + "\n";
+		FEN = lastFEN = "position fen " + FEN + "\ngo movetime " + Config.moveTime + "\n";
 		Process exe = Runtime.getRuntime().exec(Config.stockfish);
 		OutputStream stdin = exe.getOutputStream();
 		stdin.write(FEN.getBytes());
@@ -26,6 +25,7 @@ public class Stockfish {
 					String s = scan.nextLine();
 					System.out.println(s);
 					if(s.contains("bestmove")) { 
+						currentSide = lastFEN.split(" ")[3].charAt(0);
 						bestMove = s.split(" ")[1]; 
 					}
 				}
