@@ -19,11 +19,6 @@ public class Coordinate {
 		return this.y;
 	}
 	
-	public void set(int x, int y) {
-		this.x = x;
-		this.y = y;
-	}
-	
 	public String toString() {
 		return this.x + "," + this.y;
 	}
