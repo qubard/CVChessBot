@@ -128,7 +128,7 @@ public class BoardReader {
 	public boolean buildFEN() throws IOException {
 		refresh();
 		String tempFEN = FEN;
-		FEN = "";	
+		FEN = "";
 		boolean b = false;
 		int k = isWhite()? 1 : -1;
 		int d = isWhite() ? 0 : (Config.WIDTH-Config.TILE_WIDTH);
@@ -180,9 +180,7 @@ public class BoardReader {
 			FEN = FEN.replaceAll(s, i+"");
 		}
 		
-		FEN += ' ';
-		FEN += getTurn();
-		FEN += ' ';
+		FEN = FEN + ' ' + getTurn() + ' ';
 		
 		if(wKCastle) FEN += "K";
 		if(wQCastle) FEN += "Q";
@@ -190,16 +188,13 @@ public class BoardReader {
 		if(bQCastle) FEN += "q";
 		if(!(bQCastle||bKCastle||wKCastle||wQCastle)) FEN += '-';
 		
-		FEN += ' ';
-		FEN += enPassant;
-		FEN += " 0 ";
-		FEN += nBlackMoves;
+		FEN = FEN + " " + enPassant + " 0 " + nBlackMoves;
 		
 		return b;
 	}
 	
 	public boolean fenMatchesSide() {
-		return getTurn() == (isWhite() ? 'w' : 'b');
+		return Stockfish.getCurrentSide() == getTurn();
 	}
 	
 	private boolean hasMoved() {
@@ -211,16 +206,10 @@ public class BoardReader {
 			String r = "";
 			String currentFEN = fenStack.pop();
 			String lastFEN = fenStack.pop();
-			String mB = currentFEN.split("/")[3];
-			String pB = currentFEN.split("/")[1];
-			String oB = lastFEN.split("/")[1];
-			String mW = currentFEN.split("/")[4];
-			String pW = currentFEN.split("/")[6];
-			String oW = lastFEN.split("/")[6];
 			for(int i = 0; i < 8; i++){
-				if(pW.charAt(i) == '1' && mW.charAt(i) == 'P' && oW.charAt(i) == 'P')  
+				if(currentFEN.split("/")[6].charAt(i) == '1' && currentFEN.split("/")[4].charAt(i) == 'P' && lastFEN.split("/")[6].charAt(i) == 'P') 
 					r = (char)(97+i)+"3";
-				if(pB.charAt(i) == '1' && mB.charAt(i) == 'p' && oB.charAt(i) == 'p') 
+				if(currentFEN.split("/")[1].charAt(i) == '1' && currentFEN.split("/")[3].charAt(i) == 'p' && lastFEN.split("/")[1].charAt(i) == 'p') 
 					r = (char)(97+i)+"6";
 			}
 			fenStack.push(currentFEN);

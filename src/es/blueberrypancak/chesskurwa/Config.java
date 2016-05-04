@@ -21,10 +21,10 @@ public class Config {
 	public static final int WIDTH = 544;
 	public static final int TILE_WIDTH = 68;
 	
-	public static final int moveTime = 100;
+	public static final int moveTime = 500;
 	public static final int threadTime = 100;
 	
-	public static final int mouseDelay = 100;
+	public static final int mouseDelay = 50;
 	
 	public static final String stockfish = "stockfish-7-x64.exe";
 	
