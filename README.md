@@ -13,5 +13,5 @@ For more information see [this](http://blueberrypancak.es/chess-com-bot-stockfis
 
 # Bug reporting
 
-If there are any bugs feel free to submit an issue and I'll look at it. 
+If there are any bugs feel free to submit create a new issue. 
 
