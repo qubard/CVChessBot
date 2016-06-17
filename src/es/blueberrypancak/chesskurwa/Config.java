@@ -11,9 +11,9 @@ public class Config {
 	public static final Color BLACK = new Color(0,0,0);
 	public static final Color RED = new Color(255,0,0);
 	
-	public static final Color S1 = new Color(181,181,163);
-	public static final Color S2 = new Color(240,217,173);
-	public static final Color S3 = new Color(225,163,99);
+	public static final Color S1 = new Color(181,152,142);
+	public static final Color S2 = new Color(231,217,181);
+	public static final Color S3 = new Color(223,166,99);
 	public static final Color Y1 = new Color(218,207,157);
 	public static final Color Y2 = new Color(240,217,171);
 	public static final Color Y3 = new Color(234,203,75);
