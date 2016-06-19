@@ -11,32 +11,17 @@ import java.util.Stack;
 
 public class BoardReader {
 	
-	/*
-
-	  .oooooo.   oooo                                    oooo    oooo                                                 
-	 d8P'  `Y8b  `888                                    `888   .8P'                                                  
-	888           888 .oo.    .ooooo.   .oooo.o  .oooo.o  888  d8'    oooo  oooo  oooo d8b oooo oooo    ooo  .oooo.   
-	888           888P"Y88b  d88' `88b d88(  "8 d88(  "8  88888[      `888  `888  `888""8P  `88. `88.  .8'  `P  )88b  
-	888           888   888  888ooo888 `"Y88b.  `"Y88b.   888`88b.     888   888   888       `88..]88..8'    .oP"888  
-	`88b    ooo   888   888  888    .o o.  )88b o.  )88b  888  `88b.   888   888   888        `888'`888'    d8(  888  
-	 `Y8bood8P'  o888o o888o `Y8bod8P' 8""888P' 8""888P' o888o  o888o  `V88V"V8P' d888b        `8'  `8'     `Y888""8o                                           
-	
-	 										- made by cub @ www.blueberrypancak.es -
-	*/
-	
 	private Robot robot;
 	
 	private int boardX, boardY, nBlackMoves;
 	
-	private boolean wQCastle, wKCastle, bQCastle, bKCastle;
+	private boolean wQCastle, wKCastle, bQCastle, bKCastle, myTurn;
 	
 	private static BufferedImage img;
-
+	
 	private Stack<String> fenStack;
 	
 	private String FEN, enPassant;
-	
-	private boolean myTurn;
 	
 	public BoardReader() throws IOException, AWTException {
 		robot = new Robot();
