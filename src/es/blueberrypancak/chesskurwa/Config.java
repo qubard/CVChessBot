@@ -14,9 +14,9 @@ public class Config {
 	public static final Color S1 = new Color(181,152,142);
 	public static final Color S2 = new Color(231,217,181);
 	public static final Color S3 = new Color(223,166,99);
-	public static final Color Y1 = new Color(218,207,157);
-	public static final Color Y2 = new Color(240,217,171);
-	public static final Color Y3 = new Color(234,203,75);
+	public static final Color Y1 = new Color(202,191,167);
+	public static final Color Y2 = new Color(240,217,158);
+	public static final Color Y3 = new Color(215,136,99);
 	
 	public static final int WIDTH = 544;
 	public static final int TILE_WIDTH = 68;
