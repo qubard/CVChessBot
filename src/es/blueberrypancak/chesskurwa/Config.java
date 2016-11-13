@@ -30,7 +30,7 @@ public class Config {
 	
 	public static final Piece[] pieces = { 
 			new Piece('r',851),
-			new Piece('n',1439),
+			new Piece('n',1408),
 			new Piece('b',829),
 			new Piece('q',918),
 			new Piece('k',640),
