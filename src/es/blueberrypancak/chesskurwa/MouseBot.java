@@ -9,7 +9,7 @@ public class MouseBot {
 	private static MouseBot bot;
 	
 	private Robot robot;
-
+	
 	public MouseBot() throws AWTException {
 		this.robot = new Robot();
 	}

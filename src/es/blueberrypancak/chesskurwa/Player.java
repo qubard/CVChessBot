@@ -18,10 +18,13 @@ public class Player {
 		System.out.println("Starting in 1 second...");
 		Thread.sleep(1000);
 		while(true) {
-			if(boardReader.buildFEN() && boardReader.isFENBuilt()) Stockfish.run(boardReader.getFEN());
+			if(boardReader.buildFEN() && boardReader.isFENBuilt() && boardReader.isMyTurn()) { 
+				Stockfish.run(boardReader.getFEN());
+			}
+			
 			if(!boardReader.toString().equals(last) && Stockfish.getBestMove() != "" && boardReader.isFENBuilt()) {
 				last = boardReader.toString();
-				if(boardReader.isMyTurn() && boardReader.fenMatchesSide()) { 
+				if(boardReader.isMyTurn() && boardReader.fenMatchesSide()) {					
 					MouseBot.get().Move(Stockfish.getBestMove());
 				}
 			}

@@ -132,7 +132,6 @@ public class BoardReader {
 			}
 			FEN += '/';
 		}
-		
 		FEN = FEN.substring(0, FEN.length()-1);
 
 		if(fenStack.size() >= 1) {
@@ -174,7 +173,6 @@ public class BoardReader {
 		if(!(bQCastle||bKCastle||wKCastle||wQCastle)) FEN += '-';
 		
 		FEN = FEN + " " + enPassant + " 0 " + nBlackMoves;
-		
 		return b;
 	}
 	
@@ -208,9 +206,7 @@ public class BoardReader {
 
 	public boolean isWhite() {
 		int x = boardX+7; int y = boardY+487;
-		return match(x,y,Config.S1) && match(x+1,y,Config.S2) && match(x+2,y,Config.S3)
-				|| match(x+1,y,Config.S1) && match(x+2,y,Config.S2) && match(x+3,y,Config.S3)
-				|| match(x,y,Config.Y1) && match(x+1,y,Config.Y2) && match(x+2,y,Config.Y3)
+		return match(x,y,Config.Y1) && match(x+1,y,Config.Y2) && match(x+2,y,Config.Y3)
 				|| match(x+1,y,Config.Y1) && match(x+2,y,Config.Y2) && match(x+3,y,Config.Y3);
 	}
 	
