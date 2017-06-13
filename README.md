@@ -1,6 +1,8 @@
 # ChessKurwa
 A Chess.com bot.
 
+**NOTE:** This project will no longer be updated.
+
 # Installation
 
 Download [stockfish](https://stockfishchess.org/) and put it in the project's root directory (check out the Config.java file and make sure the executable names match as well).
@@ -11,7 +13,7 @@ That's pretty much it. Hit play and, well, enjoy.
 
 BTW, I cannot stress enough that your board size is 68x68 and looks like this (otherwise you have to change board width/tile size in the config class):
  
-![Make sure the board looks like this!](https://raw.githubusercontent.com/qubard/ChessKurwa/master/68x68board.png)
+![Make sure the board looks like this!](http://upload.blueberrypancak.es/private/68x68board.png)
 
 For more information see [this](http://blueberrypancak.es/chess-com-bot-stockfish-7/#more-365) post.
 
