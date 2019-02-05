@@ -1,4 +1,4 @@
-package chess.bot.chesskurwa;
+package chess.bot.cvchess;
 
 import java.awt.AWTException;
 import java.io.IOException;

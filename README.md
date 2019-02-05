@@ -1,7 +1,7 @@
-# ChessKurwa
+# CVChessBot
 A Chess.com bot.
 
-**NOTE:** This project will no longer be updated.
+**NOTE:** This project will no longer be updated (this project became quite popular and I had to take it down after the website asked me--don't condone cheating!).
 
 # Installation
 
