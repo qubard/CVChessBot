@@ -15,5 +15,5 @@ BTW, I cannot stress enough that your board size is 68x68 and looks like this (o
 
 # Bug reporting
 
-If there are any bugs feel free to create a new issue. 
+If there are any bugs feel free to create a new issue. The only current feature not implemented is pawn advancement.
 
