@@ -11,11 +11,7 @@ Make sure you're using Chess.com's "old" interface and on the simple board in Li
 
 That's pretty much it. Hit play and, well, enjoy.
 
-BTW, I cannot stress enough that your board size is 68x68 and looks like this (otherwise you have to change board width/tile size in the config class):
- 
-![Make sure the board looks like this!](https://upload.blueberrypancake.xyz/private/68x68board.png)
-
-For more information see [this](https://blueberrypancake.xyz/chess-com-bot-stockfish-7/#more-365) post.
+BTW, I cannot stress enough that your board size is 68x68 and looks like this (otherwise you have to change board width/tile size in the config class).
 
 # Bug reporting
 
